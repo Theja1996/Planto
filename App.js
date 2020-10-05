@@ -37,9 +37,7 @@ const image = {
     'https://i.pinimg.com/originals/1c/dc/f2/1cdcf2051c6b1caeeb29ad4c8906b74a.jpg',
 };
 
-const image5 = {
-  uri: 'https://pbs.twimg.com/media/Eaf9V_sWkAIDxcq.jpg',
-};
+
 function MyPlantScreen({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
