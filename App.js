@@ -19,6 +19,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import {Col, Row, Grid} from 'react-native-easy-grid';
 import AccordionViewrAqua from './Plants/aqua';
+import AccordionViewrPotato from './Plants/potato';
 import AccordionViewr from './Plants';
 
 function HomeScreen({navigation}) {
@@ -64,6 +65,33 @@ function MyPlantScreen({navigation}) {
                     </TouchableOpacity>
                   </Col>
                 </Row>
+
+                <Row>
+                  <Col style={styles.buttonMN}>
+                    <TouchableOpacity
+                      onPress={() => navigation.navigate('Potato Plants')}>
+                      <View style={styles.buttonM}>
+                        <Text style={styles.buttonText}>Potato Plants</Text>
+                      </View>
+                    </TouchableOpacity>
+                  </Col>
+                  <Col>
+                    <TouchableOpacity
+                      onPress={() => navigation.navigate('Aquatic Plants')}>
+                      <View style={styles.buttonM}>
+                        <Text style={styles.buttonText}>Aquatic Plants</Text>
+                      </View>
+                    </TouchableOpacity>
+                  </Col>
+                </Row>
+
+
+
+
+
+
+
+
               </Text>
             </ScrollView>
           </ImageBackground>
@@ -93,6 +121,20 @@ function AquaScreen({navigation}) {
         <SafeAreaView style={[styles.container]}>
           <ScrollView style={styles.scrollView}>
             <AccordionViewrAqua />
+          </ScrollView>
+        </SafeAreaView>
+      </View>
+    </View>
+  );
+}
+
+function PotatoScreen({navigation}) {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <View style={styles.container}>
+        <SafeAreaView style={[styles.container]}>
+          <ScrollView style={styles.scrollView}>
+            <AccordionViewrPotato />
           </ScrollView>
         </SafeAreaView>
       </View>
@@ -206,6 +248,18 @@ function App() {
           component={AquaScreen}
           options={{
             title: 'Aquatic Plants',
+
+            headerStyle: {
+              backgroundColor: '#5bb98a',
+            },
+            headerTintColor: '#fff',
+          }}
+        />
+        <Stack.Screen
+          name="Potato Plants"
+          component={PotatoScreen}
+          options={{
+            title: 'Potato Plants',
 
             headerStyle: {
               backgroundColor: '#5bb98a',
