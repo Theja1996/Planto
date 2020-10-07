@@ -11,6 +11,9 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
+
+import {Container, Header} from 'native-base';
+
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -22,22 +25,26 @@ import AccordionViewrAqua from './Plants/aqua';
 import AccordionViewrPotato from './Plants/potato';
 import AccordionViewr from './Plants';
 
+import Gallery from './Gallery';
+
 function HomeScreen({navigation}) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
+    <Container>
+      <Header style={styles.head} />
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <Text>Home Screen</Text>
+        <Button
+          title="Go to Details"
+          onPress={() => navigation.navigate('Details')}
+        />
+      </View>
+    </Container>
   );
 }
 const image = {
   uri:
     'https://i.pinimg.com/originals/1c/dc/f2/1cdcf2051c6b1caeeb29ad4c8906b74a.jpg',
 };
-
 
 function MyPlantScreen({navigation}) {
   return (
@@ -84,14 +91,6 @@ function MyPlantScreen({navigation}) {
                     </TouchableOpacity>
                   </Col>
                 </Row>
-
-
-
-
-
-
-
-
               </Text>
             </ScrollView>
           </ImageBackground>
@@ -145,7 +144,13 @@ function PotatoScreen({navigation}) {
 function GalleryScreen({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Gallery Screen</Text>
+      <View style={styles.container}>
+        <SafeAreaView style={[styles.container]}>
+          <ScrollView style={styles.scrollView}>
+            <Gallery />
+          </ScrollView>
+        </SafeAreaView>
+      </View>
     </View>
   );
 }
@@ -225,8 +230,30 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            title: 'Home',
+
+            headerStyle: {
+              backgroundColor: 'transparent',
+            },
+            headerTintColor: 'black',
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{
+            title: 'Details',
+
+            headerStyle: {
+              backgroundColor: 'transparent',
+            },
+            headerTintColor: 'black',
+          }}
+        />
         <Stack.Screen name="MyPlant" component={MyPlantScreen} />
         <Stack.Screen name="Gallery" component={GalleryScreen} />
         <Stack.Screen name="Search" component={SearchScreen} />
@@ -290,6 +317,12 @@ const styles = StyleSheet.create({
     margin: 5,
     flex: 1,
     flexDirection: 'column',
+  },
+  head: {
+    backgroundColor: 'green',
+    height: 90,
+    borderBottomRightRadius: 3,
+    borderRadius: 20,
   },
   textM: {
     fontSize: 56,
