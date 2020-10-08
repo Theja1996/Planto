@@ -26,6 +26,7 @@ import AccordionViewrPotato from './Plants/potato';
 import AccordionViewr from './Plants';
 
 import Gallery from './Gallery';
+import MyComponent from './Search';
 
 function HomeScreen({navigation}) {
   return (
@@ -120,6 +121,7 @@ function AquaScreen({navigation}) {
         <SafeAreaView style={[styles.container]}>
           <ScrollView style={styles.scrollView}>
             <AccordionViewrAqua />
+         
           </ScrollView>
         </SafeAreaView>
       </View>
@@ -158,8 +160,14 @@ function GalleryScreen({navigation}) {
 function SearchScreen({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Search Screen</Text>
+    <View style={styles.container}>
+      <SafeAreaView style={[styles.container]}>
+        <ScrollView style={styles.scrollView}>
+          <MyComponent />
+        </ScrollView>
+      </SafeAreaView>
     </View>
+  </View>
   );
 }
 
