@@ -70,11 +70,12 @@ import SearchBar from "react-native-dynamic-search-bar";
         <SearchBar
           height={50}
           fontSize={20}
-          fontColor="black"
-          iconColor="black"
+          fontColor="white"
+          iconColor="white"
           shadowColor="#282828"
-          cancelIconColor="black"
+          cancelIconColor="white"
           backgroundColor="transparent"
+          
        //   spinnerVisibility={spinnerVisibility}
           placeholder="Search"
           fontFamily="BurbankBigCondensed-Black"

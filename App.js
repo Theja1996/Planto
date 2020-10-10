@@ -10,9 +10,10 @@ import {
   SafeAreaView,
   TouchableOpacity,
   ScrollView,
+  Animated,
 } from 'react-native';
 
-import {Container, Header} from 'native-base';
+import {Container, Header, Icon} from 'native-base';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -31,7 +32,6 @@ import MyComponent from './Search';
 function HomeScreen({navigation}) {
   return (
     <Container>
-      <Header style={styles.head} />
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Text>Home Screen</Text>
         <Button
@@ -42,60 +42,82 @@ function HomeScreen({navigation}) {
     </Container>
   );
 }
-const image = {
+/*const image = {
   uri:
-    'https://i.pinimg.com/originals/1c/dc/f2/1cdcf2051c6b1caeeb29ad4c8906b74a.jpg',
-};
+    'https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+};*/
 
 function MyPlantScreen({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <View style={styles.container}>
-        <SafeAreaView style={[styles.container]}>
-          <ImageBackground source={image} style={styles.image}>
-            <ScrollView style={styles.scrollView}>
-              <Text style={styles.textM}>
-                <Row>
-                  <Col style={styles.buttonMN}>
-                    <TouchableOpacity
-                      onPress={() => navigation.navigate('Medicinal Plants')}>
-                      <View style={styles.buttonM}>
-                        <Text style={styles.buttonText}>Medicinal Plants</Text>
-                      </View>
-                    </TouchableOpacity>
-                  </Col>
-                  <Col>
-                    <TouchableOpacity
-                      onPress={() => navigation.navigate('Aquatic Plants')}>
-                      <View style={styles.buttonM}>
-                        <Text style={styles.buttonText}>Aquatic Plants</Text>
-                      </View>
-                    </TouchableOpacity>
-                  </Col>
-                </Row>
+        <ImageBackground
+          source={require('./Plants/images/prof/canvan.png')}
+          style={styles.image}>
+          <MyComponent />
+        </ImageBackground>
+        <Animated.ScrollView style={styles.scrollView}>
+          <SafeAreaView style={[styles.container1]}>
+            <Text style={styles.textM}>
+              <Row>
+                <Col style={styles.buttonMN}>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate('Medicinal Plants')}>
+                    <View style={styles.buttonM}>
+                      <Text style={styles.buttonText}>Medicinal Plants</Text>
+                    </View>
+                  </TouchableOpacity>
+                </Col>
+                <Col>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate('Aquatic Plants')}>
+                    <View style={styles.buttonM}>
+                      <Text style={styles.buttonText}>Aquatic Plants</Text>
+                    </View>
+                  </TouchableOpacity>
+                </Col>
+              </Row>
 
-                <Row>
-                  <Col style={styles.buttonMN}>
-                    <TouchableOpacity
-                      onPress={() => navigation.navigate('Potato Plants')}>
-                      <View style={styles.buttonM}>
-                        <Text style={styles.buttonText}>Potato Plants</Text>
-                      </View>
-                    </TouchableOpacity>
-                  </Col>
-                  <Col>
-                    <TouchableOpacity
-                      onPress={() => navigation.navigate('Aquatic Plants')}>
-                      <View style={styles.buttonM}>
-                        <Text style={styles.buttonText}>Aquatic Plants</Text>
-                      </View>
-                    </TouchableOpacity>
-                  </Col>
-                </Row>
-              </Text>
-            </ScrollView>
-          </ImageBackground>
-        </SafeAreaView>
+              <Row>
+                <Col style={styles.buttonMN}>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate('Potato Plants')}>
+                    <View style={styles.buttonM}>
+                      <Text style={styles.buttonText}>Potato Plants</Text>
+                    </View>
+                  </TouchableOpacity>
+                </Col>
+                <Col>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate('Aquatic Plants')}>
+                    <View style={styles.buttonM}>
+                      <Text style={styles.buttonText}>Aquatic Plants</Text>
+                    </View>
+                  </TouchableOpacity>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col style={styles.buttonMN}>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate('Medicinal Plants')}>
+                    <View style={styles.buttonM}>
+                      <Text style={styles.buttonText}>Medicinal Plants</Text>
+                    </View>
+                  </TouchableOpacity>
+                </Col>
+                <Col>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate('Aquatic Plants')}>
+                    <View style={styles.buttonM}>
+                      <Text style={styles.buttonText}>Aquatic Plants</Text>
+                    </View>
+                  </TouchableOpacity>
+                </Col>
+              </Row>
+            </Text>
+          </SafeAreaView>
+        </Animated.ScrollView>
       </View>
     </View>
   );
@@ -121,7 +143,6 @@ function AquaScreen({navigation}) {
         <SafeAreaView style={[styles.container]}>
           <ScrollView style={styles.scrollView}>
             <AccordionViewrAqua />
-         
           </ScrollView>
         </SafeAreaView>
       </View>
@@ -160,14 +181,12 @@ function GalleryScreen({navigation}) {
 function SearchScreen({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-    <View style={styles.container}>
-      <SafeAreaView style={[styles.container]}>
-        <ScrollView style={styles.scrollView}>
-          <MyComponent />
-        </ScrollView>
-      </SafeAreaView>
+      <View style={styles.container}>
+        <SafeAreaView style={[styles.container]}>
+          <ScrollView style={styles.scrollView} />
+        </SafeAreaView>
+      </View>
     </View>
-  </View>
   );
 }
 
@@ -185,12 +204,13 @@ function DetailsScreen({navigation}) {
   return (
     <Tab.Navigator
       initialRouteName="MyPlant"
-      activeColor="#e91e63"
-      inactiveColor="#3e2465"
-      barStyle={{backgroundColor: '#694fad'}}>
+      activeColor="#24aa74"
+      inactiveColor="white"
+      barStyle={{backgroundColor: 'black'}}>
       <Tab.Screen
         name="MyPlant"
         component={MyPlantScreen}
+       
         options={{
           tabBarLabel: 'My Plant',
           tabBarIcon: ({color}) => (
@@ -245,7 +265,7 @@ function App() {
             title: 'Home',
 
             headerStyle: {
-              backgroundColor: 'transparent',
+              backgroundColor: '#24aa74',
             },
             headerTintColor: 'black',
           }}
@@ -254,16 +274,36 @@ function App() {
           name="Details"
           component={DetailsScreen}
           options={{
-            title: 'Details',
+         //   title: 'Details',
 
             headerStyle: {
-              backgroundColor: 'transparent',
+              backgroundColor: '#24aa74',
             },
             headerTintColor: 'black',
           }}
         />
-        <Stack.Screen name="MyPlant" component={MyPlantScreen} />
-        <Stack.Screen name="Gallery" component={GalleryScreen} />
+        <Stack.Screen
+          name="MyPlant"
+          component={MyPlantScreen}
+          options={{
+            title: 'MyPlant',
+
+            headerStyle: {
+              backgroundColor: '#24aa74',
+            },
+            headerTintColor: 'black',
+          }}
+        />
+        <Stack.Screen
+          name="Gallery"
+          component={GalleryScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: '#24aa74',
+            },
+            headerTintColor: 'black',
+          }}
+        />
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="Setting" component={SettingScreen} />
         <Stack.Screen
@@ -273,7 +313,7 @@ function App() {
             title: 'Medicinal Plants',
 
             headerStyle: {
-              backgroundColor: '#5bb98a',
+              backgroundColor: '#24aa74',
             },
             headerTintColor: '#fff',
           }}
@@ -285,7 +325,7 @@ function App() {
             title: 'Aquatic Plants',
 
             headerStyle: {
-              backgroundColor: '#5bb98a',
+              backgroundColor: '#24aa74',
             },
             headerTintColor: '#fff',
           }}
@@ -297,7 +337,7 @@ function App() {
             title: 'Potato Plants',
 
             headerStyle: {
-              backgroundColor: '#5bb98a',
+              backgroundColor: '#24aa74',
             },
             headerTintColor: '#fff',
           }}
@@ -309,29 +349,35 @@ function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
+    //  flex: 1,
+    //flexDirection: 'column',
     width: '100%',
     height: '100%',
+    // backgroundColor:'#45cc99',
+  },
+  container1: {
+    //  flex: 1,
+    //flexDirection: 'column',
+    //width: '100%',
+    //height: '100%',
+    //#5cd3a1marginTop: 10,
   },
   image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
+    //flex: 1,
+    //resizeMode: 'cover',
+    //justifyContent: 'center',
     //borderWidth: 5,
     //borderColor:"#b2f9d6",
+    // width: 300,
+    height: 200,
+    borderTopLeftRadius: 60,
   },
   scrollView: {
-    margin: 5,
-    flex: 1,
+    //margin: 5,
+    //flex: 1,
     flexDirection: 'column',
   },
-  head: {
-    backgroundColor: 'green',
-    height: 90,
-    borderBottomRightRadius: 3,
-    borderRadius: 20,
-  },
+
   textM: {
     fontSize: 56,
     alignItems: 'center',
@@ -345,10 +391,10 @@ const styles = StyleSheet.create({
     // flex:3,
     justifyContent: 'space-around',
     alignItems: 'flex-start',
-    backgroundColor: '#00ffda',
+    // backgroundColor: '#00ffda',
     borderColor: '#FFFFFF',
     borderRadius: 10,
-    borderWidth: 5,
+    borderWidth: 2,
     marginRight: 20,
     //  margin:5,
     //marginLeft:5,
@@ -357,6 +403,7 @@ const styles = StyleSheet.create({
     marginLeft: -25,
     marginRight: 25,
   },
+
   buttonText: {
     textAlign: 'center',
     padding: 20,

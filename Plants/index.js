@@ -61,7 +61,7 @@ const SECTIONS =  [
     image1: <Image  source={require('./images/aswenna2.png')}   />,
    },
    {
-    title: 'බරව-ඇඔිල්ල - Ananas comosus (L.) Merr',
+    title: 'බරව-ඇඹිල්ල - Ananas comosus (L.) Merr',
     content1:'Common Names',
     content2: 'Barawa-embilla, Kebella ,Kodali, Vettikan, Vettil ',
     content3: 'Useful plant parts ',

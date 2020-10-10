@@ -84,16 +84,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
       return (
         <SafeAreaView style={styles.container}>
         
-          <Text
-            style={{
-              padding: 16,
-              fontSize: 20,
-              color: 'white',
-              backgroundColor: 'green',
-            }}>
-            Image Gallery
-          </Text>
-      
+          
           <FlatList
             data={this.state.dataSource}
             renderItem={({item}) => (
@@ -129,7 +120,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 30,
+    //marginTop: 30,
   },
   image: {
     height: 120,
