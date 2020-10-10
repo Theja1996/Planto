@@ -29,6 +29,8 @@ import AccordionViewr from './Plants';
 import Gallery from './Gallery';
 import MyComponent from './Search';
 
+import Menu from './Menu';
+
 function HomeScreen({navigation}) {
   return (
     <Container>
@@ -192,9 +194,10 @@ function SearchScreen({navigation}) {
 
 function SettingScreen({navigation}) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Setting Screen</Text>
-    </View>
+    <SafeAreaView
+      style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Menu />
+    </SafeAreaView>
   );
 }
 
@@ -210,7 +213,6 @@ function DetailsScreen({navigation}) {
       <Tab.Screen
         name="MyPlant"
         component={MyPlantScreen}
-       
         options={{
           tabBarLabel: 'My Plant',
           tabBarIcon: ({color}) => (
@@ -274,7 +276,7 @@ function App() {
           name="Details"
           component={DetailsScreen}
           options={{
-         //   title: 'Details',
+            //   title: 'Details',
 
             headerStyle: {
               backgroundColor: '#24aa74',
