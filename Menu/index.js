@@ -27,15 +27,19 @@ class Menu extends React.Component {
     this.state = {
       screenName: 'Home',
 
-    };
-    
-  }
+      };
+//home menu changes
+    }
+
+
 
   onMenuAction() {
     this.menu.openMenu();
   }
+
   render() {
     const {screenName} = this.state;
+
     return (
       <View style={styles.mainView}>
         <SidemenuAnimation
@@ -45,10 +49,15 @@ class Menu extends React.Component {
             <Sidemenu
               onSelectMenu={(name) => {
                 this.setState({screenName: name});
+
                 this.menu.openMenu();
               }}
             />
-          }>
+          }
+
+
+
+          >
           <TouchableOpacity
             onPress={() => {
               this.onMenuAction();
@@ -60,9 +69,28 @@ class Menu extends React.Component {
             />
           </TouchableOpacity>
           <View style={styles.innerView}>
-            <Text style={styles.text}>{screenName}</Text>
-            <Text>hi</Text>
+          <Text style={styles.text}>{screenName}</Text>
+
+
+
           </View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </SidemenuAnimation>
       </View>
     );
@@ -83,18 +111,18 @@ const styles = StyleSheet.create({
   innerView: {
     flex: 1,
     justifyContent: 'center',
-    
+
     alignItems: 'center',
   },
   menuView: {
     marginLeft: 20,
     marginTop: 40,
-   
+
   },
   menuIcon: {
     height: 30,
     width: 30,
-   
+
   },
 });
 export default Menu;

@@ -20,13 +20,13 @@ import {
   Dimensions,
 } from 'react-native';
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 let menuData = [
-  {name: 'Profile', image: require('./user.png')},
-  {name: 'Settings', image: require('./settings.png')},
-  {name: 'Demo Videos', image: require('./videos.png')},
-  {name: 'Help', image: require('./help.png')},
-  {name: 'Power', image: require('./power.png')},
+  { name: 'Profile', image: require('./user.png') },
+  { name: 'Settings', image: require('./settings.png') },
+  { name: 'Demo Videos', image: require('./videos.png') },
+  { name: 'Help', image: require('./help.png') },
+  { name: 'Power', image: require('./power.png') },
 ];
 
 class Sidemenu extends React.Component {
@@ -40,7 +40,7 @@ class Sidemenu extends React.Component {
             width: width - this.props.menuSize,
             justifyContent: 'center',
             height: '90%',
-            backgroundColor:'#24aa74',
+            backgroundColor: '#24aa74',
           }}>
           {this.renderMenu()}
         </View>
@@ -50,10 +50,10 @@ class Sidemenu extends React.Component {
 
   renderMenu() {
     return (
-      //  menuData.map((item,index)=>{
+      // menuData.map((item,index)=>{
       // return this.renderItem(item);
-    
-      menuData.map(item =>this.renderItem(item))
+
+      menuData.map(item => this.renderItem(item))
     );
   }
 
@@ -69,17 +69,17 @@ class Sidemenu extends React.Component {
           height: 60,
           flexDirection: 'row',
           alignItems: 'center',
-          
+
         }}>
         <View
           style={{
-           padding: 8,
+            padding: 8,
             borderRadius: 5,
-           backgroundColor: 'rgba(255,255,255,0.4)',
+            backgroundColor: 'rgba(255,255,255,0.4)',
           }}>
           <Image
             source={item.image}
-            style={{tintColor: '#fff', height: 20, width: 20}}
+            style={{ tintColor: '#fff', height: 20, width: 20 }}
           />
         </View>
         <Text style={styles.titleStyle}>{item.name}</Text>
@@ -89,8 +89,8 @@ class Sidemenu extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  mainView: {flex: 1, backgroundColor: '#24aa74'},
-  titleStyle: {color: '#fff', fontSize: 18, fontWeight: '500', marginLeft: 10},
+  mainView: { flex: 1, backgroundColor: '#24aa74' },
+  titleStyle: { color: '#fff', fontSize: 18, fontWeight: '500', marginLeft: 10 },
 });
 
 Sidemenu.defaultProps = {
