@@ -13,16 +13,18 @@ import {
     
 
 } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faAtom } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
-import {navigation} from 'react-navigation';
+
 
 function HomeScreen({ navigation: { navigate } }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <View style={styles.container}>
-            <ImageBackground
-          source={require('../Plant/images/backg.jpg')}
+           <ImageBackground
+          source={require('../Plant/images/pic.jpg')}
           style={styles.image}>
           
       
@@ -68,7 +70,7 @@ function HomeScreen({ navigation: { navigate } }) {
                   </TouchableOpacity>
                 </Col>
               </Row>
-
+             
               <Row style={styles.row}>
                                 <Col style={styles.buttonMN}>
                                     <TouchableOpacity onPress={() => navigate('Fruit')}
@@ -106,11 +108,18 @@ function HomeScreen({ navigation: { navigate } }) {
                                     </TouchableOpacity>
                                 </Col>
                             </Row>
+                            
                         </Text>
+                      
                     </SafeAreaView>
                 </Animated.ScrollView>
-                </ImageBackground>
+                 </ImageBackground>
+               
             </View>
+            <View style={{ flexDirection: 'row', justifyContent:'space-evenly' }}>
+<FontAwesomeIcon icon={ faAtom} size={50}  secondaryColor="#ffff" onPress={() => navigate('Aqua')} />
+
+</View>
         </View>
     );
 }
@@ -120,9 +129,14 @@ const styles = StyleSheet.create({
         flex: 1,
         //flexDirection: 'column',
         width: '100%',
-        height: '100%',
-        // backgroundColor:'#45cc99',
-        //backgroundColor:'red',
+        height: '80%',
+      //  backgroundColor:'#cce7e8',
+        // borderColor:'black',
+        // borderBottomWidth:40,
+        // borderBottomLeftRadius:20,
+        // borderBottomRightRadius:20,
+        // borderTopWidth:20,
+       
     },
     scrollView: {
         //margin: 5,
@@ -144,12 +158,17 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'flex-start',
         // backgroundColor: '#00ffda',
-        borderColor: '#FFFFFF',
+        borderColor: 'black',
         borderRadius: 10,
         borderWidth: 2,
         marginRight: 20,
         //  margin:5,
         //marginLeft:5,
+    shadowColor:'red',
+    shadowOpacity:0.6,
+  //  backgroundColor:'red',
+  
+    
     },
     buttonMN: {
         marginLeft: -25,
@@ -159,7 +178,7 @@ const styles = StyleSheet.create({
     buttonText: {
         textAlign: 'center',
         padding: 20,
-        color: 'white',
+        color: 'black',
         fontSize: 20,
     },
     textM: {
@@ -176,14 +195,21 @@ const styles = StyleSheet.create({
     image: {
         height: '100%',
         width:'100%',
+borderBottomWidth:10,
+borderBottomLeftRadius:2,
+borderBottomRightRadius:2,
+borderTopWidth:20,
+//borderTopEndRadius:30,
+//borderTopStartRadius:30,
 
       },
       buttonTextbushes:{
         textAlign: 'center',
         padding: 40,
-        color: 'white',
+        color: 'black',
         fontSize: 20,
       },
+     
 
 });
 
