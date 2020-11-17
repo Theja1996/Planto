@@ -88,8 +88,11 @@ import {
           duration={300}
           transition="backgroundColor"
           style={{ backgroundColor: (isActive ? 'rgba(255,255,255,1)' : 'rgba(245,252,255,1)') }}>
+           
+          
           <Text style={styles.headerText}>{section.title} </Text>
-            
+
+           
          
              </Animatable.View> 
       );
@@ -160,6 +163,7 @@ import {
     container:{
   backgroundColor:'white',
   
+  
     },
     headerText:{
   fontSize:20,
@@ -167,15 +171,19 @@ import {
   backgroundColor:'#00FFCC',
   marginBottom:5,
   borderRadius:5,
-  color:'black'
+  color:'black',
+marginLeft:40,
+borderBottomLeftRadius:10,
   },
   contextText:{
     fontSize:20,
     fontWeight:"900",
+    marginLeft:40,
   },
   contextSubHeading:{
     fontWeight:'bold',
     fontSize:20,
+    marginLeft:40,
   },
   });
   

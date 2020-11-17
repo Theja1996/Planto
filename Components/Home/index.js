@@ -14,7 +14,7 @@ import {
 
 } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faAtom } from '@fortawesome/free-solid-svg-icons';
+import { faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
 
@@ -117,7 +117,7 @@ function HomeScreen({ navigation: { navigate } }) {
                
             </View>
             <View style={{ flexDirection: 'row', justifyContent:'space-evenly' }}>
-<FontAwesomeIcon icon={ faAtom} size={50}  secondaryColor="#ffff" onPress={() => navigate('Aqua')} />
+<FontAwesomeIcon icon={ faChevronCircleUp } size={40}  secondaryColor="#ffff" onPress={() => navigate('Aqua')}  />
 
 </View>
         </View>
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'flex-start',
         // backgroundColor: '#00ffda',
-        borderColor: 'black',
+       borderColor: 'black',
         borderRadius: 10,
         borderWidth: 2,
         marginRight: 20,
@@ -173,6 +173,7 @@ const styles = StyleSheet.create({
     buttonMN: {
         marginLeft: -25,
         marginRight: 25,
+        
     },
 
     buttonText: {
