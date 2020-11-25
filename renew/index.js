@@ -29,7 +29,7 @@ import Gallery from './Gallery';
 import MyComponent from './Search';
 
 import Menu from './Menu';
-import Splash from './splash';
+
 
 function HomeScreen({navigation}) {
   return (
@@ -40,7 +40,7 @@ function HomeScreen({navigation}) {
           title="Go to Details"
           onPress={() => navigation.navigate('Details')}
         />
-        <Splash />
+      
       </View>
     </Container>
   );
