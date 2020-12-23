@@ -1,34 +1,39 @@
 /* eslint-disable prettier/prettier */
 //import {createAppContainer, createStackNavigator} from 'react-navigation';
-import { createAppContainer } from 'react-navigation';
- import { createStackNavigator } from 'react-navigation-stack';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
 
 // import Splash from './Components/Splash';
 // import Log from './Components/Log';
 import HomeScreen from '../Home';
-import  MediScreen from '../Plant';
-import  AquaScreen from '../Plant/Aqua';
+import MediScreen from '../Plant';
+import AquaScreen from '../Plant/Aqua';
 import PotatoScreen from '../Plant/Potato';
 import BushesScreen from '../Plant/Bushes';
 import FruitScreen from '../Plant/Fruit';
 
-
 const Log = createStackNavigator({
- 
-  Home: {screen: HomeScreen,navigationOptions:{header:null}},
-  Plant: {screen: MediScreen,navigationOptions:{headerTitle:'Medical Plants'}},
-  Aqua: {screen: AquaScreen,navigationOptions:{headerTitle:'Aquatic Plants'} },
-  Potato: {screen: PotatoScreen,navigationOptions:{headerTitle:'Potato Plants'} },
-  Bushes: {screen: BushesScreen,navigationOptions:{headerTitle:'Bushes'} },
-  Fruit: {screen: FruitScreen,navigationOptions:{headerTitle:'Fruit Plants'} },
-  
+  Home: {screen: HomeScreen, navigationOptions: {header: null}},
+  Plant: {
+    screen: MediScreen,
+    navigationOptions: {headerTitle: 'Medical Plants'},
+  },
+  Aqua: {
+    screen: AquaScreen,
+    navigationOptions: {headerTitle: 'Aquatic Plants'},
+  },
+  Potato: {
+    screen: PotatoScreen,
+    navigationOptions: {headerTitle: 'Potato Plants'},
+  },
+  Bushes: {screen: BushesScreen, navigationOptions: {headerTitle: 'Bushes'}},
+  Fruit: {
+    screen: FruitScreen,
+    navigationOptions: {headerTitle: 'Fruit Plants'},
+  },
 });
 
 export default createAppContainer(Log);
-
-
-
-
 
 /* eslint-disable prettier/prettier */
 // import React, {Component} from 'react';
@@ -44,7 +49,6 @@ export default createAppContainer(Log);
 
 //  // enableScreens();
 //  // const Stack = createNativeStackNavigator();
-
 
 //  const Stack = createStackNavigator();
 // function HomeScreen({ navigation: { navigate } }) {
@@ -77,7 +81,6 @@ export default createAppContainer(Log);
 //            }}
 //         />
 
-
 //         <HomeScreen  />
 //          </Stack.Navigator>
 //      </NavigationContainer>
@@ -104,7 +107,6 @@ export default createAppContainer(Log);
 
 // import {NavigationContainer} from '@react-navigation/native';
 // import {createStackNavigator} from '@react-navigation/stack';
-
 
 // import {Col, Row, Grid} from 'react-native-easy-grid';
 // import AccordionViewrAqua from './Plant/aqua';
@@ -249,13 +251,6 @@ export default createAppContainer(Log);
 //   );
 // }
 
-
-
-
-
-
-
-
 // const Stack = createStackNavigator();
 
 // function Log() {
@@ -275,7 +270,6 @@ export default createAppContainer(Log);
 //             headerTintColor: 'black',
 //           }}
 //         />
-
 
 //         <Stack.Screen
 //           name="MyPlant"
@@ -397,9 +391,3 @@ export default createAppContainer(Log);
 // });
 
 // export default Log;
-
-
-
-
-
-

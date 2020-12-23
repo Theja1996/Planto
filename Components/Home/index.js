@@ -17,7 +17,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
-// import ReactChipsInput from 'react-native-chips';
+
 
 
 function HomeScreen({ navigation: { navigate } }) {
