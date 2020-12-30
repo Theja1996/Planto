@@ -8,6 +8,7 @@ import {
    Image,
     SafeAreaView,
     ImageBackground,
+    ScrollView,
   } from 'react-native';
   import React, {Component} from 'react';
   import Accordion  from 'react-native-collapsible/Accordion';
@@ -129,23 +130,27 @@ import {
 
     _renderHeader(section, index, isActive, sections) {
       return (
-
+        <ScrollView>
         <Animatable.View
           duration={300}
           transition="backgroundColor"
           style={{ backgroundColor: (isActive ? 'rgba(255,255,255,1)' : 'rgba(245,252,255,1)') }}>
           <Text style={styles.headerText}>{section.title}</Text>
              </Animatable.View>
+            </ScrollView>
       );
     }
 
 
    _renderContent(section, i, isActive, sections,props) {
       return (
+        <ScrollView>
         <Animatable.View
           duration={300}
           transition="backgroundColor"
           style={{ backgroundColor: (isActive ? 'rgba(255,255,255,1)' : 'rgba(245,252,255,1)') }}>
+   
+         
           <Animatable.Text
             duration={300}
             easing="ease-out"
@@ -153,12 +158,15 @@ import {
         {sections.content}
         {section.image}
     </Animatable.Text>
+   
         </Animatable.View>
+        </ScrollView>
       );
     }
 
    _renderContent = (section,image) => {
       return (
+        <ScrollView>
         <SafeAreaView style={styles.container}>
         <View  >
         <Text style={styles.contextSubHeading}>{section.content1}</Text>
@@ -174,6 +182,7 @@ import {
            </View>
 
         </SafeAreaView>
+        </ScrollView>
       );};
 
 
@@ -184,6 +193,7 @@ import {
     };
   render() {
       return (
+        <ScrollView>
         <Accordion
           sections={SECTIONS}
           activeSections={this.state.activeSections}
@@ -192,7 +202,7 @@ import {
           renderContent={this._renderContent}
           onChange={this._updateSections}
          />
-
+ </ScrollView>
       );
     }
   }

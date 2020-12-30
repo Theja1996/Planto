@@ -8,6 +8,7 @@ import {
    Image,
     SafeAreaView,
     ImageBackground,
+    ScrollView
   } from 'react-native';
   import React, {Component} from 'react';
   import Accordion  from 'react-native-collapsible/Accordion';
@@ -199,6 +200,7 @@ import {
     };
   render() {
       return (
+        <ScrollView>
         <Accordion
           sections={SECTIONS}
           activeSections={this.state.activeSections}
@@ -207,6 +209,7 @@ import {
           renderContent={this._renderContent}
           onChange={this._updateSections}
          />
+        </ScrollView>
   
       );
     }
